@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/corner_shapes"
+    android:padding="10dp"
+    android:layout_marginBottom="10dp">
+
+    <LinearLayout
+        android:id="@+id/image"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:layout_marginStart="5dp"
+        android:background="@drawable/round"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/youtube"
+            android:layout_gravity="center"
+
+           />
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:text="Youtube"
+        style="@style/TextAppearance.AppCompat.SearchResult.Title"
+        app:layout_constraintStart_toEndOf="@id/image"
+        app:layout_constraintTop_toTopOf="@id/image" />
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jan 12,2012"
+        style="@style/TextAppearance.AppCompat.SearchResult.Subtitle"
+        app:layout_constraintBottom_toBottomOf="@id/image"
+        app:layout_constraintStart_toStartOf="@id/name" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/TextAppearance.Material3.BodyLarge"
+        app:layout_constraintTop_toTopOf="@id/name"
+        app:layout_constraintBottom_toBottomOf="@id/date"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="-$ 85.00" />
+</androidx.constraintlayout.widget.ConstraintLayout>

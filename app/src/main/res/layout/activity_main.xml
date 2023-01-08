@@ -52,6 +52,15 @@
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
 
+    <ScrollView
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toBottomOf="@id/appBarLayout"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigation"
+        android:layout_height="0dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="horizontal"
@@ -97,7 +106,53 @@
 
     </LinearLayout>
 
+            <org.eazegraph.lib.charts.ValueLineChart
+                android:id="@+id/chart"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                app:egUseCubic="true"
+                app:egUseOverlapFill="true"
+                app:egCurveSmoothness="0.5"
+                android:layout_margin="10dp"
+                app:egIndicatorLineColor="#FE6DA8"
+                app:egLegendHeight="30dp"
+                app:egShowStandardValue="true"/>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            style="@style/TextAppearance.AppCompat.SearchResult.Title"
+            android:text="Top Spending"
+            />
+        <ImageButton
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:src="@drawable/transfer"
+            android:background="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                tools:listitem="@layout/top_spending_item"
+                />
+        </LinearLayout>
+    </ScrollView>
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:elevation="10dp"
